@@ -1,10 +1,3 @@
-<?php 
-    /*
-    Template Name: Cтраница с работой портфолио
-    Template Post Type: portfolio
-    */
-?>
-
 <?php get_header(); ?>
 
    <!-- Page Title
@@ -34,7 +27,7 @@
 
             <div id="secondary"  class="four columns entry-details">
 
-                  <h1>Geometrics.</h1>
+                  <h1><?php the_title(); ?></h1>
 
                   <div class="entry-description">
 
@@ -48,8 +41,8 @@
                   <ul class="portfolio-meta-list">
 						   <li><span>Date: </span><?php the_field('project_date'); ?></li>
 						   <li><span>Client </span><?php the_field('client'); ?></li>
-						   <li><span>Skills: </span>Photoshop, Photography, Branding</li>
-				      </ul>
+						   <li><span>Skills: </span><?php the_terms( get_the_ID(), 'skills', '', ' / ', '' ); ?></li>
+				      </ul>                        
 
                   <a class="button" href="http://behance.net">View project</a>
 

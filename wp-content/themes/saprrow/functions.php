@@ -118,10 +118,38 @@
     		'query_var'          => true,
     		'rewrite'            => true,
     		'capability_type'    => 'post',
+    		'taxonomies'         => array('skills'),
     		'has_archive'        => true,
     		'hierarchical'       => false,
     		'menu_position'      => 4,
     		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
+    	) );
+    }
+    
+    // хук для регистрации
+    add_action('init', 'create_taxonomy');
+    function create_taxonomy(){
+	    register_taxonomy('skills', array('portfolio'), array(
+		'label'                 => '', // определяется параметром $labels->name
+		'labels'                => array(
+			'name'              => 'Навык',
+			'singular_name'     => 'Навыки',
+			'search_items'      => 'Найти навык',
+			'all_items'         => 'Все навыки',
+			'view_item '        => 'Смотреть навыки',
+			'parent_item'       => 'Родительский навык',
+			'parent_item_colon' => 'Родительский навык:',
+			'edit_item'         => 'Изменить навык',
+			'update_item'       => 'Обновить навык',
+			'add_new_item'      => 'Добавить новый навык',
+			'new_item_name'     => 'Новое имя навыка',
+			'menu_name'         => 'Навыки',
+		),
+		'description'           => 'Навыки, которые использовались', // описание таксономии
+		'public'                => true,
+		'publicly_queryable'    => null, // равен аргументу public
+		'hierarchical'          => false,
+		'rewrite'               => true,
     	) );
     }
 
