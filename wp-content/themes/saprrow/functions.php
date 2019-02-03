@@ -7,6 +7,31 @@
         wp_enqueue_style( 'layout', get_template_directory_uri() . '/essets/css/layout.css' );
         wp_enqueue_style( 'media-queries', get_template_directory_uri() . '/essets/css/media-queries.css' );
     }
+    ////////////////////////////////////////////
+    //////////ОТПРАВКА НА МЫЛО/////////////////
+    add_action( 'wp_ajax_send_mail', 'send_mail' );
+    add_action( 'wp_ajax_nopriv_send_mail', 'send_mail' );
+    
+    function send_mail() {
+        $contactName = $_POST['contactName'];
+        $contactEmail = $_POST['contactEmail']; 
+        $contactSubject = $_POST['contactSubject']; 
+        $contactMessage = $_POST['contactMessage'];
+        $to = get_option('admin_email');
+            
+        remove_all_filters( 'wp_mail_from' );
+        remove_all_filters( 'wp_mail_from_name' );
+    
+        $headers = array(
+    	'From: Me Myself <me@example.net>',
+    	'content-type: text/html',
+    	'Cc: John Q Codex <jqc@wordpress.org>',
+    	'Cc: iluvwp@wordpress.org', // тут можно использовать только простой email адрес
+    );
+
+        wp_mail( $to, $contactSubject, $contactMessage, $headers );
+        wp_die();
+    }
     /////////////////////////////////////////
     ////////////////////////////////////////////
     add_action( 'wp_footer', 'scripts_theme' );
@@ -18,6 +43,7 @@
         wp_enqueue_script( 'doubletaptogo', get_template_directory_uri() . '/essets/js/doubletaptogo.js', ['jquery'], null, true);
         wp_enqueue_script( 'init', get_template_directory_uri() . '/essets/js/init.js', ['jquery'], null, true);
         wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/essets/js/modernizr.js', null, null, false );
+        wp_enqueue_script( 'main', get_template_directory_uri() . '/essets/js/modernizr.js', ['jquery'], null, false );
     }
     /////////////////////////////////////////
     ////////////свой контент/////////////////
