@@ -52,40 +52,42 @@
 
                   <!-- form -->
                   
-                        <!--<?php echo do_shortcode( '[contact-form-7 id="60" title="Contact form 1"]' ) ?>-->                        
-                        <?php echo do_shortcode( '[ninja_form id=2]' ) ?>
-          <!--        <form name="contactForm" id="contactForm" method="post" action="">-->
-      				<!--	<fieldset>-->
+                        <!-- <?php echo do_shortcode( '[contact-form-7 id="60" title="Contact form 1"]' ) ?> 
+                        <?php echo do_shortcode( '[ninja_form id=2]' ) ?>-->
+                        
+                        
+                  <form name="contactForm" id="contactForm" method="post" action="">
+      					<fieldset>
 
-          <!--              <div class="half">-->
-      				<!--		   <label for="contactName">Name <span class="required">*</span></label>-->
-      				<!--		   <input name="contactName" type="text" id="contactName" size="35" value="" />-->
-          <!--              </div>-->
+                        <div class="half">
+      						   <label for="contactName">Name <span class="required">*</span></label>
+      						   <input name="contactName" type="text" id="contactName" size="35" value="" />
+                        </div>
 
-          <!--              <div class="half pull-right">-->
-      				<!--		   <label for="contactEmail">Email <span class="required">*</span></label>-->
-      				<!--		   <input name="contactEmail" type="text" id="contactEmail" size="35" value="" />-->
-          <!--              </div>-->
+                        <div class="half pull-right">
+      						   <label for="contactEmail">Email <span class="required">*</span></label>
+      						   <input name="contactEmail" type="text" id="contactEmail" size="35" value="" />
+                        </div>
 
-          <!--              <div>-->
-      				<!--		   <label for="contactSubject">Subject</label>-->
-      				<!--		   <input name="contactSubject" type="text" id="contactSubject" size="35" value="" />-->
-          <!--              </div>-->
+                        <div>
+      						   <label for="contactSubject">Subject</label>
+      						   <input name="contactSubject" type="text" id="contactSubject" size="35" value="" />
+                        </div>
 
-          <!--              <div>-->
-          <!--                 <label  for="contactMessage">Message <span class="required">*</span></label>-->
-          <!--                 <textarea name="contactMessage"  id="contactMessage" rows="15" cols="50" ></textarea>-->
-          <!--              </div>-->
+                        <div>
+                           <label  for="contactMessage">Message <span class="required">*</span></label>
+                           <textarea name="contactMessage"  id="contactMessage" rows="15" cols="50" ></textarea>
+                        </div>
 
-          <!--              <div>-->
-          <!--                 <button class="submit">Submit</button>-->
-          <!--                 <span id="image-loader">-->
-          <!--                    <img src="images/loader.gif" alt="" />-->
-          <!--                 </span>-->
-          <!--              </div>-->
+                        <div>
+                           <button class="submit">Submit</button>
+                           <span id="image-loader">
+                              <img src="images/loader.gif" alt="" />
+                           </span>
+                        </div>
 
-      				<!--	</fieldset>-->
-      				<!--</form> <!-- Form End -->
+      					</fieldset>
+      				</form> <!-- Form End 
 
                   <!-- contact-warning -->
                   <div id="message-warning"></div>
