@@ -1,4 +1,6 @@
 <?php
+define('WP_CACHE', true);
+define( 'WPCACHEHOME', '/home/ubuntu/workspace/wp-content/plugins/wp-super-cache/' );
 if (isset($_SERVER["HTTP_X_FORWARDED_PROTO"]) && $_SERVER["HTTP_X_FORWARDED_PROTO"] == "https") $_SERVER["HTTPS"] = "on";
 /**
  * The base configuration for WordPress
